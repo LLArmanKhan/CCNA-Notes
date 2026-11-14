@@ -1,0 +1,2 @@
+LAN --> Local Area Network
+WAN --> Wide Area Network
