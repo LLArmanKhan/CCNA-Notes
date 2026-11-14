@@ -22,4 +22,8 @@ See [Topics](00-Roadmap/Topics.md) to track my learning progress and [Resources]
 
 ---
 
+<<<<<<< HEAD
 *Learning networking, one concept at a time.*
+=======
+*Learning networking, one concept at a time.*
+>>>>>>> 1b5aea396f48aeb4e7ff2cd40399573eb2a26794
