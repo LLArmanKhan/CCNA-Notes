@@ -1,4 +1,3 @@
-
 # Data Transmission
 
 ## 1. What is a Transmission Mode?
@@ -9,9 +8,9 @@ A communication link is the physical or wireless medium that connects two device
 
 There are three types of transmission modes:
 
-a. Simplex Mode
-b. Half-Duplex Mode
-c. Full-Duplex Mode
+1. Simplex Mode
+2. Half-Duplex Mode
+3. Full-Duplex Mode
 
 ## 2. Types of Transmission Modes
 
@@ -23,7 +22,10 @@ In Simplex Mode, data can travel in only one direction. One device acts as the s
 - The receiving device cannot send data back through the same communication link.
 - The direction of data transmission is fixed.
 
-**Example:** Traditional television broadcasting, where a TV station transmits signals to televisions, but televisions do not send signals back to the broadcasting station.
+**Real-World Examples:**
+
+1. **Television Broadcasting:** A broadcasting station transmits audio and video signals to televisions, but televisions do not send signals back through the same communication channel.
+2. **Public Address (PA) System:** A microphone sends audio signals to loudspeakers. The loudspeakers receive and reproduce the audio but do not transmit audio back to the microphone.
 
 **Direction:**
 
@@ -39,7 +41,10 @@ Both devices can send and receive data. However, only one device can transmit da
 - Both devices can send and receive data.
 - Simultaneous transmission in both directions is not possible.
 
-**Example:** Walkie-Talkies, where one person speaks while the other listens. They must take turns communicating.
+**Real-World Examples:**
+
+1. **Walkie-Talkies:** Both users can communicate with each other, but only one person can speak at a time. The other person must wait until the first person finishes transmitting.
+2. **CB (Citizens Band) Radio:** Used for communication between people, particularly in vehicles and field operations. Users take turns transmitting messages over a shared radio channel.
 
 **Direction:**
 
@@ -59,7 +64,10 @@ Both devices can transmit and receive data at the same time without waiting for 
 - Both devices can send and receive data.
 - Simultaneous transmission in both directions is possible.
 
-**Example:** Telephone communication, where both participants can speak and listen simultaneously.
+**Real-World Examples:**
+
+1. **Telephone Communication:** During a telephone conversation, both participants can speak and listen simultaneously without waiting for the other person to finish speaking.
+2. **Modern Switched Ethernet:** In a typical full-duplex Ethernet connection between a computer and a network switch, both devices can transmit and receive data simultaneously.
 
 **Direction:**
 
@@ -73,12 +81,14 @@ Both devices can transmit and receive data at the same time without waiting for 
 
 **Remember:**
 
-Simplex = One-way communication
+- Simplex = One-way communication
+- Half-Duplex = Two-way communication, one at a time
+- Full-Duplex = Two-way communication, simultaneously
 
-Half-Duplex = Two-way communication, one at a time
+## 4. References
 
-Full-Duplex = Two-way communication, simultaneously
+**Video:** Data Transmission Mode - Simplex, Half Duplex and Full Duplex - Hindi/Urdu | CCNA Lectures
 
-Reference :
- Video Name : Data Transmission Mode-Simplex,Half Duplex and Full Duplex-Hindi/Urdu | CCNA Lectures --> Technical Guftugu
-Link : https://youtu.be/KPiKMobVcO0?si=qOEbIjYW3Vet2hkn
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/KPiKMobVcO0?si=qOEbIjYW3Vet2hkn
