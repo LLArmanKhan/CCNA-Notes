@@ -78,3 +78,7 @@ Simplex = One-way communication
 Half-Duplex = Two-way communication, one at a time
 
 Full-Duplex = Two-way communication, simultaneously
+
+Reference :
+ Video Name : Data Transmission Mode-Simplex,Half Duplex and Full Duplex-Hindi/Urdu | CCNA Lectures --> Technical Guftugu
+Link : https://youtu.be/KPiKMobVcO0?si=qOEbIjYW3Vet2hkn
