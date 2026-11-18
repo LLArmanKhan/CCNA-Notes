@@ -1,45 +1,48 @@
 OSI Model (Open Systems Interconnection Model)
-CCNA Notes
-
 1. Introduction to the OSI Model
 The OSI Model is not a practically implemented networking model. It is a reference model that helps us understand how data communication takes place between two devices over a network.
 
 We have practically implemented the TCP/IP Model, whereas the OSI Model is mainly used as a reference to understand network communication.
 
+The OSI Model consists of seven layers.
+Technical note: OSI is a reference model. The OSI protocol suite is not commonly deployed as a complete stack; modern networks predominantly use the TCP/IP suite. OSI layer functions still help describe and troubleshoot networking.
+
 The Seven Layers of the OSI Model
-- I. Application Layer
-- II. Presentation Layer
-- III. Session Layer
-- IV. Transport Layer
-- V. Network Layer
-- VI. Data Link Layer
-- VII. Physical Layer
+1. Application Layer
+2. Presentation Layer
+3. Session Layer
+4. Transport Layer
+5. Network Layer
+6. Data Link Layer
+7. Physical Layer
 2. Sender's and Receiver's Perspectives
 Sender's Perspective
 When we send data from one device to another, the data travels from the Application Layer down to the Physical Layer.
 
 The order is:
-- I. Application Layer
-- II. Presentation Layer
-- III. Session Layer
-- IV. Transport Layer
-- V. Network Layer
-- VI. Data Link Layer
-- VII. Physical Layer
-  For example, when I use a website and send some data to its server, I interact with the Application Layer first. Then, the data passes through the remaining layers until it reaches the Physical Layer, where it is transmitted in the form of bits.
+1. Application Layer
+2. Presentation Layer
+3. Session Layer
+4. Transport Layer
+5. Network Layer
+6. Data Link Layer
+7. Physical Layer
+For example, when I use a website and send some data to its server, I interact with the Application Layer first. Then, the data passes through the remaining layers until it reaches the Physical Layer, where it is transmitted in the form of bits.
+
 This process is called Encapsulation.
 Receiver's Perspective
 When another device receives the data, the process happens in the reverse order.
 
 The order is:
-- A. Physical Layer
-- B. Data Link Layer
-- C. Network Layer
-- D. Transport Layer
-- E. Session Layer
-- F. Presentation Layer
-- G. Application Layer
-  For example, when the website's server receives my data, it first receives it at the Physical Layer in the form of bits. Then, the data travels upward through all the layers until it reaches the Application Layer.
+1. Physical Layer
+2. Data Link Layer
+3. Network Layer
+4. Transport Layer
+5. Session Layer
+6. Presentation Layer
+7. Application Layer
+For example, when the website's server receives my data, it first receives it at the Physical Layer in the form of bits. Then, the data travels upward through all the layers until it reaches the Application Layer.
+
 This process is called Decapsulation.
 
 Therefore, the layers are the same for both the sender and the receiver, but the order of data processing is reversed.
@@ -47,7 +50,7 @@ Therefore, the layers are the same for both the sender and the receiver, but the
 - Receiver: Physical Layer → Application Layer (Decapsulation).
 3. Real-World Working of the Seven OSI Layers
 Now let's understand what actually happens inside each layer when data is transferred over a network.
-Layer I: Application Layer
+Layer 1: Application Layer
 The Application Layer provides an interface through which users interact with network applications and services.
 
 Whenever a user wants to perform an activity over a network, they generally interact with an application that uses Application Layer protocols.
@@ -56,7 +59,7 @@ For example:
 - If I want to send an email, I interact with Gmail.
 - If I want to order food, I interact with the Swiggy application.
 - If I want to browse a website, I interact with a web browser.
-  Therefore, the user generally interacts with the Application Layer through applications.
+Therefore, the user generally interacts with the Application Layer through applications.
 Main Responsibility of the Application Layer
 The main responsibility of the Application Layer is to provide network services to applications.
 
@@ -67,17 +70,18 @@ Common Application Layer Protocols
 - Telnet
 - SSH
 - FTP
-  These protocols define how applications communicate over a network.
+These protocols define how applications communicate over a network.
+
 For example:
 - HTTP and HTTPS are used for web communication.
 - Telnet and SSH are used for remote access.
 - FTP is used for file transfer.
-  The Application Layer provides the services and protocols through which applications can communicate with other applications over a network.
-Layer II: Presentation Layer
+The Application Layer provides the services and protocols through which applications can communicate with other applications over a network.
+Layer 2: Presentation Layer
 The Presentation Layer is responsible for representing data in a format that the receiving system can understand.
 
 It has three main responsibilities:
-A. Data Formatting / Translation
+1. Data Formatting / Translation
 The sender and receiver need to understand the format in which data is exchanged.
 
 Therefore, both sides use compatible data formats and encoding standards.
@@ -88,9 +92,10 @@ For example, data can be represented using:
 - JSON
 - XML
 - UTF-8
-  JSON and XML are data formats, whereas UTF-8 is a character encoding standard.
+JSON and XML are data formats, whereas UTF-8 is a character encoding standard.
+
 The main purpose is to ensure that the receiver can correctly interpret the received data.
-B. Encryption and Decryption
+2. Encryption and Decryption
 The second responsibility of the Presentation Layer is encryption and decryption.
 
 Suppose I am sending data from a sender to a receiver through a network.
@@ -108,7 +113,7 @@ For example, TLS provides encryption for secure communication.
 Cryptographic libraries can also be used to perform encryption and decryption.
 
 Important: TLS is commonly associated with secure Application Layer communication in real-world networking. Its functions can be understood using the Presentation Layer analogy, but TLS is not strictly a separate OSI Presentation Layer protocol.
-C. Compression and Decompression
+3. Compression and Decompression
 The third responsibility of the Presentation Layer is compression and decompression.
 
 Suppose a sender wants to transfer a 100 GB file over a network.
@@ -129,16 +134,16 @@ Examples of compression technologies:
 - Gzip
 - Brotli
 - ZIP
-  When HTTP is used, HTTP compression commonly uses Gzip and Brotli.
-Layer III: Session Layer
+When HTTP is used, HTTP compression commonly uses Gzip and Brotli.
+Layer 3: Session Layer
 The Session Layer is responsible for establishing, managing, and terminating communication sessions between applications.
 
 It has three main responsibilities:
-A. Session Establishment
+1. Session Establishment
 When two applications want to communicate with each other, a communication session needs to be established.
 
 The Session Layer is responsible for establishing the session so that the applications can communicate and exchange information.
-B. Session Maintenance
+2. Session Maintenance
 The second responsibility is session maintenance.
 
 Session maintenance means managing the communication session while it is active.
@@ -172,7 +177,8 @@ There will be four checkpoints:
 - Checkpoint 2: After 50 pages.
 - Checkpoint 3: After 75 pages.
 - Checkpoint 4: After 100 pages.
-  Now suppose Application A successfully sends the first 25 pages.
+Now suppose Application A successfully sends the first 25 pages.
+
 Both sides record Checkpoint 1.
 
 Then, when 50 pages have been sent, Checkpoint 2 is recorded.
@@ -190,13 +196,13 @@ Therefore, communication can resume from the last successfully established check
 This is the basic concept of synchronization through checkpoints.
 
 Important: This is a conceptual OSI Session Layer example. In modern TCP/IP applications, resumable transfers and checkpoints are generally implemented by application protocols or other mechanisms rather than a dedicated Session Layer.
-C. Session Termination
+3. Session Termination
 The third responsibility of the Session Layer is session termination.
 
 When data transfer is complete, or when a user logs out, the communication session can be terminated.
 
 This closes the communication session between the applications.
-Layer IV: Transport Layer
+Layer 4: Transport Layer
 The main responsibility of the Transport Layer is to provide communication between the source application and the destination application.
 
 It provides end-to-end communication between applications running on different devices.
@@ -205,7 +211,7 @@ For example, suppose I use Gmail to send an email to another person.
 
 The Transport Layer helps deliver the data from my source application to the destination application.
 Main Functions of the Transport Layer
-A. Segmentation and Reassembly
+1. Segmentation and Reassembly
 The first responsibility of the Transport Layer is segmentation and reassembly.
 
 When a sender wants to transmit a large amount of data, the Transport Layer divides that data into smaller units called segments or datagrams.
@@ -219,8 +225,8 @@ When the receiver receives these smaller parts, the Transport Layer reassembles 
 Protocol Data Units (PDUs):
 - TCP: Segment
 - UDP: Datagram
-  Both represent transport-layer data units, but their structures and functions differ.
-B. Sequencing and Reordering
+Both represent transport-layer data units, but their structures and functions differ.
+2. Sequencing and Reordering
 After dividing large data into smaller segments, the sender transmits them over the network.
 
 However, the receiver may not receive the segments in the same order in which they were sent.
@@ -240,7 +246,7 @@ The receiving TCP implementation uses these sequence numbers to arrange the rece
 Therefore, the data can be reassembled in the correct sequence.
 
 UDP does not provide built-in sequencing and reordering in the same way as TCP. If an application using UDP needs ordering, it must implement that functionality itself.
-C. End-to-End Delivery
+3. End-to-End Delivery
 The Transport Layer provides end-to-end communication between applications.
 
 For example, suppose I use Gmail to send an email.
@@ -250,7 +256,7 @@ My application communicates with the destination application through the Transpo
 The Transport Layer is responsible for delivering data between the source and destination application endpoints.
 
 It uses transport protocols such as TCP and UDP.
-D. Port Addressing
+4. Port Addressing
 Port addressing is one of the most important functions of the Transport Layer.
 
 Suppose I am using multiple applications on my device:
@@ -259,7 +265,8 @@ Suppose I am using multiple applications on my device:
 - Yahoo
 - WhatsApp
 - Telegram
-  All these applications may communicate with different servers, and my device may receive data from multiple sources simultaneously.
+All these applications may communicate with different servers, and my device may receive data from multiple sources simultaneously.
+
 Now, how does my device know which application should receive which data?
 
 The Transport Layer uses port numbers to identify the appropriate application or service endpoint.
@@ -272,9 +279,10 @@ At a broader level, network communication involves different types of addressing
 - IP Address: Identifies the source and destination at the network layer.
 - MAC Address: Identifies network interfaces for communication over a local network link.
 - Port Number: Identifies the source and destination application endpoints at the transport layer.
-  These addresses work together, but they have different responsibilities.
+These addresses work together, but they have different responsibilities.
+
 An IP address does not identify an individual application, and a MAC address is not used to identify applications.
-E. Multiplexing and Demultiplexing
+5. Multiplexing and Demultiplexing
 Multiplexing and demultiplexing are closely related to port addressing.
 
 First, let's understand what a port number is.
@@ -299,9 +307,14 @@ For example:
 - Data intended for WhatsApp is delivered to WhatsApp's communication endpoint.
 - Data intended for YouTube is delivered to YouTube's communication endpoint.
 - Data intended for Telegram is delivered to Telegram's communication endpoint.
-  This process is called Demultiplexing.
+This process is called Demultiplexing.
+
 Important: Port numbers are not fixed application numbers such as Port 1 for WhatsApp and Port 2 for YouTube. Applications use actual port numbers, and multiple applications can use different transport connections and ports.
-F. Flow Control
+
+Also, multiplexing and demultiplexing happen at the Transport Layer, not at the router's public IP or private IP level.
+
+A Wi-Fi router can use NAT (Network Address Translation) to translate between private and public IP addresses and maintain connection mappings. This is different from Transport Layer multiplexing and demultiplexing.
+6. Flow Control
 Flow Control is another important function of the Transport Layer.
 
 Suppose YouTube's server is very powerful and can send data at a very high speed.
@@ -319,7 +332,7 @@ The receiver communicates how much data it can currently accept, and the sender 
 Therefore, the sender does not overwhelm the receiver.
 
 TCP provides built-in flow control, whereas UDP does not provide TCP-style built-in flow control.
-G. TCP and UDP
+7. TCP and UDP
 The Transport Layer mainly uses two important protocols:
 A. TCP (Transmission Control Protocol)
 TCP is a connection-oriented and reliable transport protocol.
@@ -335,9 +348,10 @@ Its important features include:
 - Flow control.
 - Congestion control.
 - Ordered delivery.
-  TCP uses a connection before exchanging application data.
-  B. UDP (User Datagram Protocol)
-  UDP is a connectionless transport protocol.
+TCP uses a connection before exchanging application data.
+B. UDP (User Datagram Protocol)
+UDP is a connectionless transport protocol.
+
 Unlike TCP, UDP does not guarantee reliable data delivery.
 
 Its important characteristics include:
@@ -346,17 +360,20 @@ Its important characteristics include:
 - No built-in retransmission of lost datagrams.
 - No built-in sequencing and ordered delivery.
 - No TCP-style built-in flow control.
-  UDP is useful when applications prefer lower overhead and can handle reliability or ordering themselves if needed.
-  What Does Connection-Oriented and Connectionless Mean?
-  When we say TCP is connection-oriented, it means TCP establishes a logical connection between the communicating endpoints before transferring application data.
+UDP is useful when applications prefer lower overhead and can handle reliability or ordering themselves if needed.
+What Does Connection-Oriented and Connectionless Mean?
+When we say TCP is connection-oriented, it means TCP establishes a logical connection between the communicating endpoints before transferring application data.
+
 When we say UDP is connectionless, it means UDP does not establish a TCP-style connection before sending datagrams.
 
 Connection-oriented does not mean that two devices must be physically connected to each other. Both TCP and UDP communicate over a network.
+Protocol Data Unit (PDU)
+A Protocol Data Unit is the name given to the data unit handled by a particular OSI layer.
 
 At the Transport Layer:
 - TCP uses Segments.
 - UDP uses Datagrams.
-Layer V: Network Layer
+Layer 5: Network Layer
 The main responsibility of the Network Layer is to forward data packets from the source device to the destination device across different networks.
 
 For example, suppose I request a video from YouTube.
@@ -365,7 +382,7 @@ YouTube's server needs to send data packets towards my device.
 
 The Network Layer is responsible for logical addressing, routing, and packet forwarding so that the data can reach the destination IP address.
 Main Functions of the Network Layer
-A. Logical Addressing (IP Addressing)
+1. Logical Addressing (IP Addressing)
 The Network Layer uses IP addresses to identify the source and destination devices.
 
 When the Transport Layer passes its data to the Network Layer, the Network Layer adds an IP header.
@@ -374,14 +391,32 @@ The IP header contains important information, including:
 - Source IP Address.
 - Destination IP Address.
 - Other control and routing-related information.
-  The transport-layer segment or datagram becomes the payload of the IP packet.
+The transport-layer segment or datagram becomes the payload of the IP packet.
+
 Therefore, the basic structure of an IP packet is:
 
 IP Header + Payload
 
 The payload contains the Transport Layer's segment or datagram.
+
 The actual application data is carried inside that segment or datagram.
-B. Routing (Best Path Selection)
+
+For example, an IPv4 header contains information such as:
+- Version.
+- Header Length.
+- Type of Service / Differentiated Services information.
+- Total Length.
+- Identification.
+- Flags.
+- Fragment Offset.
+- Time To Live (TTL).
+- Protocol.
+- Header Checksum.
+- Source IP Address.
+- Destination IP Address.
+- Options and Padding (if present).
+The IPv4 header is not always the same size because it can contain optional fields.
+2. Routing (Best Path Selection)
 After adding the source and destination IP addresses, the Network Layer needs to determine how the packet should reach its destination.
 
 This is where routing comes into the picture.
@@ -404,11 +439,12 @@ For example, routers can use protocols such as:
 - OSPF.
 - BGP.
 - RIP.
-  Dynamic routing does not mean that a server checks the shortest path every time it sends data.
+Dynamic routing does not mean that a server checks the shortest path every time it sends data.
+
 Instead, routers use routing information to determine suitable paths towards destination networks.
 
 The best path depends on routing protocols, routing metrics, and network configuration.
-C. Forwarding
+3. Forwarding
 Routing and forwarding are closely related, but they are not the same.
 
 Routing: Determines the paths available to reach different destination networks and builds routing information.
@@ -432,32 +468,33 @@ Suppose I request a YouTube video from my mobile phone.
 The data travels through multiple network devices.
 
 A simplified path looks like this:
-A. My mobile phone sends data through my home Wi-Fi network.
-B. The data reaches my home Wi-Fi router.
-C. My router forwards the packet towards my ISP.
-D. The packet travels through multiple routers across different networks.
-E. Eventually, the packet reaches the network containing YouTube's server.
+1. My mobile phone sends data through my home Wi-Fi network.
+2. The data reaches my home Wi-Fi router.
+3. My router forwards the packet towards my ISP.
+4. The packet travels through multiple routers across different networks.
+5. Eventually, the packet reaches the network containing YouTube's server.
 The routers use their routing and forwarding information to move packets towards the destination.
 
 The actual path can contain many intermediate routers and can change depending on network conditions and routing decisions.
 
+Note: DNS resolution generally happens before the connection is established so that the domain name can be resolved to an IP address. DNS caching may occur on the device, router, ISP resolver, or other DNS infrastructure. It is not necessarily a step performed by every router along the packet's route.
 Structure of an IP Packet
 An IP packet mainly consists of:
-A. IP Header.
-B. Payload.
+1. IP Header.
+2. Payload.
 The IP Header contains the source and destination IP addresses along with other necessary information.
 
 The Payload contains the Transport Layer's segment or datagram.
 
 When the Network Layer adds an IP header to the transport-layer data, this process is called Encapsulation.
-Layer VI: Data Link Layer
+Layer 6: Data Link Layer
 The main responsibility of the Data Link Layer is to deliver frames between devices over a local network link.
 
 For example, suppose multiple devices are connected to the same network switch.
 
 The Data Link Layer helps devices communicate with each other through the switch using frames and MAC addresses.
 Main Functions of the Data Link Layer
-A. Framing
+1. Framing
 The Data Link Layer receives an IP packet from the Network Layer.
 
 It adds a Data Link Layer header and trailer around the packet to create a frame.
@@ -470,7 +507,8 @@ For example, when Ethernet is used, the Ethernet frame contains:
 - Type/Length Field.
 - Data (Payload).
 - Frame Check Sequence (FCS).
-  The IP packet becomes the payload of the Ethernet frame.
+The IP packet becomes the payload of the Ethernet frame.
+
 This means that the entire IP packet, including its IP header and transport-layer data, is carried inside the Ethernet frame's data field.
 
 The Ethernet frame can be represented as:
@@ -480,7 +518,7 @@ Ethernet Header + IP Packet (Payload) + FCS
 The Ethernet header contains the destination MAC address, source MAC address, and Type/Length field.
 
 The FCS is used for error detection.
-B. MAC Addressing
+2. MAC Addressing
 MAC stands for Media Access Control.
 
 A MAC address is used to identify a network interface at the Data Link Layer.
@@ -492,7 +530,14 @@ The switch uses MAC addresses to identify devices and forward Ethernet frames to
 MAC addresses are associated with network interfaces, commonly provided by Network Interface Cards (NICs).
 
 A device with multiple network interfaces can have multiple MAC addresses.
-C. Frame Check Sequence (FCS) and Error Detection
+
+For example, a laptop can have:
+- One MAC address for its Wi-Fi interface.
+- Another MAC address for its Ethernet interface.
+The Data Link Layer uses MAC addressing for communication over the local network link.
+
+Important: A MAC address is not used to translate a public IP address into a private IP address. That is related to NAT, which is a separate function.
+3. Frame Check Sequence (FCS) and Error Detection
 FCS stands for Frame Check Sequence.
 
 It is used for error detection in Ethernet frames.
@@ -510,19 +555,21 @@ Ethernet uses a mechanism called CRC (Cyclic Redundancy Check) for error detecti
 The process works as follows:
 
 At the Sender's Side:
-A. The sender calculates a CRC value for the frame.
-B. It places the calculated CRC value in the FCS field.
-C. The frame is transmitted to the receiver.
+1. The sender calculates a CRC value for the frame.
+2. It places the calculated CRC value in the FCS field.
+3. The frame is transmitted to the receiver.
 At the Receiver's Side:
-A. The receiver receives the Ethernet frame.
-B. It performs the CRC calculation on the received frame.
-C. It checks the calculated result against the received FCS value.
+1. The receiver receives the Ethernet frame.
+2. It performs the CRC calculation on the received frame.
+3. It checks the calculated result against the received FCS value.
 If the CRC check fails, it indicates that the frame has likely been corrupted during transmission.
 
 The receiver generally discards the corrupted frame.
 
 If the check passes, the frame is accepted at the Data Link Layer.
-D. Flow Control
+
+Important: FCS detects transmission errors; it does not correct them. It also does not guarantee protection against malicious tampering.
+4. Flow Control
 Flow control can also exist at the Data Link Layer, but it depends on the particular Data Link Layer protocol.
 
 Some Data Link Layer protocols provide flow control, while others do not.
@@ -530,10 +577,8 @@ Some Data Link Layer protocols provide flow control, while others do not.
 For example, certain link-layer protocols use mechanisms to control how quickly frames are transmitted and received.
 
 Therefore, Data Link Layer flow control is protocol-dependent.
-E. Data Link Layer Sub-Layers
+5. Data Link Layer Sub-Layers
 The Data Link Layer has two sub-layers:
-A. LLC – Logical Link Control.
-B. MAC – Media Access Control.
 A. LLC (Logical Link Control)
 LLC stands for Logical Link Control.
 
@@ -542,7 +587,13 @@ B. MAC (Media Access Control)
 MAC stands for Media Access Control.
 
 It handles MAC addressing and controls how devices access the shared transmission medium.
-Layer VII: Physical Layer
+
+Therefore, the two Data Link Layer sub-layers are:
+1. LLC – Logical Link Control.
+2. MAC – Media Access Control.
+Layer 7: Physical Layer
+The Physical Layer is the lowest layer of the OSI Model.
+
 Its main responsibility is to transmit raw bits from one device to another through a physical or wireless transmission medium.
 
 When data reaches the Physical Layer, it is represented as a sequence of bits (0s and 1s).
@@ -553,18 +604,16 @@ These signals can travel through:
 - Electrical signals over copper cables.
 - Light signals over optical fiber.
 - Radio waves through wireless communication.
-  The receiving device receives these signals and converts them back into bits.
+The receiving device receives these signals and converts them back into bits.
+
 Therefore, the Physical Layer is responsible for the actual transmission and reception of bits over the communication medium.
-
---------------------------------------------------------------
-
 4. Software-Oriented and Hardware-Oriented Layers
 The OSI Model can be broadly divided into software-oriented and hardware-oriented layers.
 Software-Oriented Layers
 The following three layers are generally considered software-oriented:
-I. Application Layer
-II. Presentation Layer
-III. Session Layer
+1. Application Layer
+2. Presentation Layer
+3. Session Layer
 These layers deal mainly with application-level communication, data representation, and session management.
 Transport Layer
 The Transport Layer acts as a bridge between the upper three layers and the lower three layers.
@@ -572,25 +621,30 @@ The Transport Layer acts as a bridge between the upper three layers and the lowe
 It provides end-to-end communication between source and destination applications.
 Hardware-Oriented Layers
 The following three layers are generally considered hardware-oriented:
-I. Network Layer
-II. Data Link Layer
-III. Physical Layer
+1. Network Layer
+2. Data Link Layer
+3. Physical Layer
 These layers deal mainly with addressing, packet delivery, local network communication, and the physical transmission of data.
+
+Note: This is a simplified classification. The OSI layers are logical functions, not strict divisions between software and hardware. Network, transport, and other layer functions can also be implemented in software.
 5. Understanding the OSI Model with a Real-World Example
 Let's understand how all seven layers of the OSI Model work through a real-world example.
 
 Suppose I have a company with seven employees, and each employee represents one layer of the OSI Model.
 
 The employees are:
-- Application Layer: Andy
-- Presentation Layer: Parvesh
-- Session Layer: Sameer
-- Transport Layer: Tanvir
-- Network Layer: Navin
-- Data Link Layer: Dinesh
-- Physical Layer: Pawan
+OSI Layer	Employee
+Application Layer	Andy
+Presentation Layer	Parvesh
+Session Layer	Sameer
+Transport Layer	Tanvir
+Network Layer	Navin
+Data Link Layer	Dinesh
+Physical Layer	Pawan
+
+
 Sender-Side Process
-I. Application Layer – Andy
+1. Application Layer – Andy
 Andy is the CEO of the company, and he is French. He only understands the French language.
 
 One day, Andy asks Parvesh to transfer an important 400-page document to another company named XYZ.
@@ -600,7 +654,7 @@ Andy tells Parvesh:
 "This is a very important 400-page document written in French. You need to transfer this document to XYZ Company."
 
 After giving these instructions, Andy hands over the French document to Parvesh, who works at the Presentation Layer.
-II. Presentation Layer – Parvesh
+2. Presentation Layer – Parvesh
 Now, Parvesh receives the document.
 
 After looking at the document, he realizes that it is written in French. However, the receiving company, XYZ, does not understand French. They only understand English.
@@ -608,7 +662,7 @@ After looking at the document, he realizes that it is written in French. However
 So, Parvesh translates the entire document from French into English so that the receiving company can understand it.
 
 After translating the document, Parvesh hands it over to Sameer, who works at the Session Layer.
-III. Session Layer – Sameer
+3. Session Layer – Sameer
 Now, Sameer receives the document.
 
 He sees that it is an important 400-page document that needs to be transferred to XYZ Company.
@@ -632,7 +686,7 @@ S1 replies:
 "Sure, I will inform you once I receive it."
 
 After establishing this communication and agreeing on the notification, Sameer hands over the document to Tanvir, who works at the Transport Layer.
-IV. Transport Layer – Tanvir
+4. Transport Layer – Tanvir
 Now, Tanvir receives the document.
 
 He sees that it contains 400 pages.
@@ -650,20 +704,22 @@ He creates the following four parts:
 - Document 2: Pages 101–200
 - Document 3: Pages 201–300
 - Document 4: Pages 301–400
-  After dividing the document, he assigns an order number to each part:
+After dividing the document, he assigns an order number to each part:
 - 1 on the first document.
 - 2 on the second document.
 - 3 on the third document.
 - 4 on the fourth document.
-  This helps the receiving company identify the correct order of all four documents.
+This helps the receiving company identify the correct order of all four documents.
+
 After dividing and numbering the documents, Tanvir hands them over to Navin, who works at the Network Layer.
-V. Network Layer – Navin
+5. Network Layer – Navin
 Now, Navin receives all four documents.
 
 He writes the following information on each document:
 - To: The address of XYZ Company.
 - From: The address of our French company.
-  This information helps identify the destination and source of the documents.
+This information helps identify the destination and source of the documents.
+
 After writing the addresses, Navin gives some instructions to Pawan, the delivery person who works at the Physical Layer.
 
 He tells Pawan:
@@ -675,7 +731,7 @@ However, you should use Road B because it is the fastest route.
 If you find traffic or congestion on Road B, then take Road C because it is the second-fastest route."
 
 After providing these routing instructions, Navin hands over all four documents to Dinesh, who works at the Data Link Layer.
-VI. Data Link Layer – Dinesh
+6. Data Link Layer – Dinesh
 Now, Dinesh receives all four documents.
 
 He realizes that these are important and confidential documents.
@@ -687,7 +743,7 @@ He also applies a special seal that helps detect whether someone has opened or t
 This way, if someone tries to open the documents, the receiving company can identify that they have been tampered with.
 
 After applying the seals, Dinesh hands over all four documents to Pawan, who works at the Physical Layer.
-VII. Physical Layer – Pawan
+7. Physical Layer – Pawan
 Now, Pawan receives all four documents.
 
 He already has the routing instructions from Navin.
@@ -699,11 +755,11 @@ So, Pawan takes all four documents and physically delivers them to the Physical 
 This completes the sender-side process.
 Receiver-Side Process
 Now, let's understand what happens when XYZ Company receives these documents.
-I. Physical Layer
+1. Physical Layer
 Pawan delivers all four documents to the employee working at the Physical Layer of XYZ Company.
 
 The employee receives the documents and passes them to the employee working at the Data Link Layer.
-II. Data Link Layer
+2. Data Link Layer
 The Data Link Layer employee receives all four documents.
 
 He checks whether the official seals are intact or have been broken.
@@ -711,7 +767,7 @@ He checks whether the official seals are intact or have been broken.
 He verifies that nobody has opened or tampered with the confidential documents during transportation.
 
 After checking the seals, he confirms that the documents appear to be intact and hands them over to the Network Layer employee.
-III. Network Layer
+3. Network Layer
 The Network Layer employee receives all four documents.
 
 He checks the destination address written on the documents.
@@ -719,7 +775,7 @@ He checks the destination address written on the documents.
 He sees that the documents are addressed to XYZ Company.
 
 Since the destination address belongs to his company, he accepts the documents and passes them to the Transport Layer employee.
-IV. Transport Layer
+4. Transport Layer
 The Transport Layer employee receives all four documents.
 
 He realizes that all four are parts of the same original document.
@@ -729,9 +785,10 @@ He checks their sequence numbers:
 - Document 2
 - Document 3
 - Document 4
-  Using these sequence numbers, he arranges all four documents in the correct order and combines them to reconstruct the original 400-page document.
+Using these sequence numbers, he arranges all four documents in the correct order and combines them to reconstruct the original 400-page document.
+
 After reconstructing the document, he hands it over to the Session Layer employee.
-V. Session Layer
+5. Session Layer
 The Session Layer employee receives the document.
 
 He realizes that this is the same document that was supposed to arrive from the French company.
@@ -743,7 +800,7 @@ So, S1 calls Sameer and informs him:
 "We have successfully received your document."
 
 After confirming the successful receipt, S1 hands over the document to the Presentation Layer employee.
-VI. Presentation Layer
+6. Presentation Layer
 The Presentation Layer employee receives the document.
 
 He checks the document and realizes that it is already written in English.
@@ -751,7 +808,7 @@ He checks the document and realizes that it is already written in English.
 Since XYZ Company understands English, there is no need to translate it.
 
 Therefore, he passes the document directly to the Application Layer employee.
-VII. Application Layer
+7. Application Layer
 Finally, the Application Layer employee receives the document.
 
 The document has successfully reached the destination company, XYZ.
@@ -759,32 +816,92 @@ The document has successfully reached the destination company, XYZ.
 This completes the receiver-side process.
 Session Termination
 As soon as S1 informs Sameer that the document has been successfully received, their communication session is terminated.
+
 The communication session between Sameer and S1 is closed.
+
+Note: This company example is an analogy for understanding the OSI layers. In actual networking, these operations involve protocols, headers, addresses, and data units rather than employees physically handling documents.
 6. Difference Between Network Layer and Transport Layer
 The Network Layer and Transport Layer have different responsibilities.
 Network Layer
-The Network Layer provides packet delivery from the source device to the destination device across networks. It works with IP addresses.
+The Network Layer provides packet delivery from the source device to the destination device across networks.
+
+It works with IP addresses.
+
 For example, when YouTube's server sends data towards my device, the Network Layer is responsible for forwarding packets towards my destination IP address.
 Transport Layer
-The Transport Layer provides communication between source and destination applications. It works with port numbers.
+The Transport Layer provides communication between source and destination applications.
+
+It works with port numbers.
+
 For example, when data reaches my device, the Transport Layer checks the destination port number and delivers the data to the appropriate application.
-7. Complete Data Transfer Process – From Application to Physical Layer
+Example: YouTube Data Transfer
+Suppose I am watching a YouTube video using my mobile phone connected to my home Wi-Fi.
+
+The communication can be understood as follows:
+1. YouTube's server sends data towards my device's public-facing network connection.
+2. The Network Layer handles IP addressing and packet forwarding through different routers.
+3. My home Wi-Fi router receives the packets.
+4. The router uses NAT, where applicable, to map the public-side connection to the appropriate private IP address and port.
+5. The packets reach my mobile phone through the local network.
+6. The Transport Layer on my mobile phone processes the received TCP segments or UDP datagrams.
+7. It uses the destination port number to deliver the data to the appropriate application endpoint.
+8. Finally, the application processes the data and displays the video.
+Therefore:
+- Network Layer: Responsible for packet delivery between source and destination devices across networks.
+- Transport Layer: Responsible for communication between source and destination application endpoints.
+7. Quick Revision of All Seven OSI Layers
+Layer	Main Responsibilities	Data Unit
+Application	Network services and application protocols	Data
+Presentation	Formatting, encryption, decryption, compression	Data
+Session	Session establishment, management, termination	Data
+Transport	Segmentation, reassembly, sequencing, ports, flow control	Segment (TCP) / Datagram (UDP)
+Network	IP addressing, routing, forwarding	Packet
+Data Link	Framing, MAC addressing, error detection	Frame
+Physical	Transmission of raw bits	Bits
+
+
+8. Important Technical Terms to Remember
+- Encapsulation: Adding layer-specific information as data moves down the OSI layers.
+- Decapsulation: Removing layer-specific information as data moves up the OSI layers.
+- Segmentation: Dividing large data into smaller transport-layer units.
+- Reassembly: Combining received transport-layer units into the original data.
+- IP Address: Identifies source and destination at the Network Layer.
+- MAC Address: Identifies a network interface at the Data Link Layer.
+- Port Number: Identifies an application endpoint at the Transport Layer.
+- Routing: Determining suitable paths towards destination networks.
+- Forwarding: Moving packets towards their next hop.
+- Multiplexing: Accepting data from multiple applications and preparing it for network transmission.
+- Demultiplexing: Delivering received transport-layer data to the appropriate application.
+- Flow Control: Preventing a sender from overwhelming a receiver.
+- FCS: A field used for error detection in Ethernet frames.
+- CRC: Cyclic Redundancy Check, an error-detection mechanism.
+- PDU: Protocol Data Unit, the name given to a data unit at a particular layer.
+9. Complete Data Transfer Process – From Application to Physical Layer
 When a sender transmits data to a receiver, the data passes through all seven layers.
 
 The sender-side process:
-- I. Application Layer:** The application generates the data.
-- II. Presentation Layer:** Data is formatted, encrypted, or compressed where required.
-- III. Session Layer:** Communication sessions are established and managed.
-- IV. Transport Layer:** Data is segmented, port information is added, and transport mechanisms are applied.
-- V. Network Layer:** Source and destination IP addresses are added to create an IP packet.
-- VI. Data Link Layer:** Source and destination MAC addresses and FCS are added to create a frame.
-- VII. Physical Layer:** The frame is transmitted as bits through the communication medium.
+1. Application Layer: The application generates the data.
+2. Presentation Layer: Data is formatted, encrypted, or compressed where required.
+3. Session Layer: Communication sessions are established and managed.
+4. Transport Layer: Data is segmented, port information is added, and transport mechanisms are applied.
+5. Network Layer: Source and destination IP addresses are added to create an IP packet.
+6. Data Link Layer: Source and destination MAC addresses and FCS are added to create a frame.
+7. Physical Layer: The frame is transmitted as bits through the communication medium.
 At the receiver's side, the reverse process takes place.
-- I. Physical Layer:** Receives signals and converts them into bits.
-- II. Data Link Layer:** Receives the frame and performs error detection.
-- III. Network Layer:** Processes the IP packet and checks the destination IP address.
-- IV. Transport Layer:** Processes the segment or datagram and delivers data to the appropriate application endpoint.
-- V. Session Layer:** Manages the communication session.
-- VI. Presentation Layer:** Performs the required decoding, decryption, or decompression.
-- VII. Application Layer:** Delivers the data to the receiving application.
+1. Physical Layer: Receives signals and converts them into bits.
+2. Data Link Layer: Receives the frame and performs error detection.
+3. Network Layer: Processes the IP packet and checks the destination IP address.
+4. Transport Layer: Processes the segment or datagram and delivers data to the appropriate application endpoint.
+5. Session Layer: Manages the communication session.
+6. Presentation Layer: Performs the required decoding, decryption, or decompression.
+7. Application Layer: Delivers the data to the receiving application.
 This is the overall working of the OSI Model.
+Important corrections to remember
+There are a few concepts in your explanation where I made technical adjustments:
+1. Software vs. Hardware Layers: The upper three and lower three layers are broadly classified this way, but OSI layers are logical functions. They are not strictly separated into software and hardware.
+2. Transport Layer as a Bridge: Calling it a bridge is a useful analogy, but technically it provides end-to-end communication between application endpoints.
+3. MAC Address: MAC addresses are used for local-link delivery. When a packet travels through routers, the Ethernet frame is recreated at each hop, so MAC addresses can change along the route. IP addresses generally remain the same end-to-end, except when NAT or other translation is involved.
+4. Public IP and Private IP: NAT is performed by the router when translating between public and private addressing. This is not Transport Layer demultiplexing.
+5. FCS: FCS detects errors; it does not repair corrupted frames or guarantee security against tampering.
+6. Routing: Dynamic routing does not mean a server calculates the shortest path every time. Routers exchange routing information and determine suitable routes using routing protocols and metrics.
+7. Presentation and Session Layers: These are conceptual OSI responsibilities. In modern TCP/IP networking, their functions are often implemented within applications and protocols rather than as separate layers.
