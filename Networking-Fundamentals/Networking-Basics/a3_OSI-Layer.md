@@ -152,8 +152,6 @@ For example, TLS provides encryption for secure communication.
 
 Cryptographic libraries can also be used to perform encryption and decryption.
 
-**Important:** TLS is commonly associated with secure Application Layer communication in real-world networking. Its functions can be understood using the Presentation Layer analogy, but TLS is not strictly a separate OSI Presentation Layer protocol.
-
 #### C. Compression and Decompression
 
 The third responsibility of the Presentation Layer is compression and decompression.
@@ -214,44 +212,38 @@ On the other hand, when I open Amazon's application and scroll through products,
 
 Dialogue Control is conceptually responsible for managing the communication dialogue between the two applications.
 
-##### B. Synchronization
+
+### Synchronization
 
 Synchronization is another important responsibility of the Session Layer.
 
-It uses checkpoints to keep track of communication progress.
+It helps track the progress of an ongoing communication session by establishing synchronization points (checkpoints) at specific stages of data exchange.
 
-Suppose Application A is sending a 100-page file to Application B.
+**Core Purpose:**
 
-The Session Layer can maintain checkpoints to identify how much data has been successfully transferred.
+When devices are involved in long communication sessions, especially when transferring large amounts of data, the communication is divided into smaller stages so that its progress can be tracked.
 
-For example, suppose a protocol establishes a checkpoint after every 25 pages.
+Synchronization helps identify how much data has been successfully transferred, keeps both sides aware of the established progress, and supports recovery if communication gets interrupted.
 
-There will be four checkpoints:
+Suppose Application A is transferring 4,000 records to Application B in batches of 1,000 records.
 
-- Checkpoint 1: After 25 pages.
-- Checkpoint 2: After 50 pages.
-- Checkpoint 3: After 75 pages.
-- Checkpoint 4: After 100 pages.
+- Batch 1: Records 0–1,000
+- Batch 2: Records 1,001–2,000
+- Batch 3: Records 2,001–3,000
+- Batch 4: Records 3,001–4,000
 
-Now suppose Application A successfully sends the first 25 pages.
+Both the sender and receiver maintain their communication progress and the last established synchronization point.
 
-Both sides record Checkpoint 1.
+Suppose Batch 1 and Batch 2 are successfully transferred, and a synchronization point is established after Batch 2. However, communication gets interrupted while transferring Batch 3.
 
-Then, when 50 pages have been sent, Checkpoint 2 is recorded.
+The receiver knows that data up to Batch 2 has been successfully received, while Batch 3 is incomplete. During recovery, the receiver can communicate its known progress to the sender.
 
-Similarly, after 75 pages, Checkpoint 3 is recorded.
+Both sides can then coordinate using their last established synchronization point and resume communication from the next stage, instead of repeating the entire transfer from the beginning.
 
-However, suppose transmission stops while the 89th page is being transferred.
+**Therefore, the core purpose of Synchronization is to divide long communication into manageable stages, track communication progress, and support recovery after an interruption.**
 
-Checkpoint 4 has not been completed.
+**Important:** This is a conceptual OSI Session Layer example. In modern TCP/IP networks, resumable transfers, checkpoints, and recovery are generally handled by application protocols or other mechanisms rather than a dedicated Session Layer.
 
-The receiver can identify that the last completed checkpoint was Checkpoint 3.
-
-Therefore, communication can resume from the last successfully established checkpoint, starting with the 76th page, rather than retransmitting the entire file.
-
-This is the basic concept of synchronization through checkpoints.
-
-**Important:** This is a conceptual OSI Session Layer example. In modern TCP/IP applications, resumable transfers and checkpoints are generally implemented by application protocols or other mechanisms rather than a dedicated Session Layer.
 
 #### C. Session Termination
 
@@ -279,7 +271,7 @@ The Transport Layer helps deliver the data from my source application to the des
 
 The first responsibility of the Transport Layer is segmentation and reassembly.
 
-When a sender wants to transmit a large amount of data, the Transport Layer divides that data into smaller units called segments or datagrams.
+When a sender wants to transmit data, the Transport Layer divides that data into smaller units called segments or datagrams.
 
 For example, suppose I want to send a large file.
 
@@ -358,8 +350,6 @@ At a broader level, network communication involves different types of addressing
 
 These addresses work together, but they have different responsibilities.
 
-An IP address does not identify an individual application, and a MAC address is not used to identify applications.
-
 #### E. Multiplexing and Demultiplexing
 
 Multiplexing and demultiplexing are closely related to port addressing.
@@ -372,13 +362,30 @@ A port number is a logical number used by the Transport Layer to identify an app
 
 Multiplexing means accepting data from multiple applications, adding the necessary transport-layer information, and forwarding it towards the Network Layer.
 
-For example, suppose I am using WhatsApp, YouTube, and Telegram simultaneously.
+**Example 1:**
+
+- Amazon sends some data.
+- YouTube sends some data.
+- Flipkart sends some data.
+
+Now, what will the Transport Layer do?
+
+1. It receives data from multiple applications.
+2. It adds the respective port number to each application's data.
+   - Amazon → Amazon's Port Number
+   - YouTube → YouTube's Port Number
+   - Flipkart → Flipkart's Port Number
+3. After adding the port numbers, it forwards the data to the Network Layer.
+
+**Example 2:**
+
+Suppose I am using WhatsApp, YouTube, and Telegram simultaneously.
 
 All three applications generate data.
 
 The Transport Layer handles data from these different applications and uses appropriate port information to distinguish their communication streams.
 
-This process is called Multiplexing.
+This process of collecting data from multiple applications, adding port numbers, and forwarding it to the Network Layer is called **Multiplexing**.
 
 ##### B. Demultiplexing
 
@@ -400,7 +407,7 @@ This process is called Demultiplexing.
 
 Flow Control is another important function of the Transport Layer.
 
-Suppose YouTube's server is very powerful and can send data at a very high speed.
+Suppose the sender's server is very powerful and can send data at a very high speed.
 
 However, my receiving device may not be able to process the incoming data at the same speed.
 
@@ -423,6 +430,7 @@ The Transport Layer mainly uses two important protocols:
 ##### A. TCP (Transmission Control Protocol)
 
 TCP is a connection-oriented and reliable transport protocol.
+It establishes the connection using three way handshake.
 
 It provides mechanisms to ensure reliable data delivery.
 
@@ -457,7 +465,7 @@ UDP is useful when applications prefer lower overhead and can handle reliability
 
 ##### What Does Connection-Oriented and Connectionless Mean?
 
-When we say TCP is connection-oriented, it means TCP establishes a logical connection between the communicating endpoints before transferring application data.
+When we say TCP is connection-oriented, it means TCP establishes a logical connection (three way handshake) between the communicating endpoints before transferring application data.
 
 When we say UDP is connectionless, it means UDP does not establish a TCP-style connection before sending datagrams.
 
@@ -478,7 +486,7 @@ For example, suppose I request a video from YouTube.
 
 YouTube's server needs to send data packets towards my device.
 
-The Network Layer is responsible for logical addressing, routing, and packet forwarding so that the data can reach the destination IP address.
+The Network Layer is responsible for **logical addressing, routing, and packet forwarding** so that the data can reach the destination IP address.
 
 #### Main Functions of the Network Layer
 
@@ -548,21 +556,9 @@ Routing and forwarding are closely related, but they are not the same.
 
 **Forwarding:** Moves a packet from an incoming interface to the appropriate outgoing interface based on the forwarding table.
 
-For example, suppose I am currently at Router R1.
-
-I want to send a packet towards a destination IP address.
-
-Router R1 checks its forwarding table to determine the appropriate next hop.
-
-It then forwards the packet towards that next hop.
-
-The next router repeats the same process until the packet reaches its destination network.
-
-This process is called packet forwarding.
-
 #### Real-World Example of Routing and Forwarding
 
-Suppose I request a YouTube video from my mobile phone.
+Suppose I upload a video on YouTube from my mobile phone.
 
 The data travels through multiple network devices.
 
