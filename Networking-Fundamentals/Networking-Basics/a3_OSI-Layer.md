@@ -1032,7 +1032,7 @@ For example, when data reaches my device, the Transport Layer checks the destina
 
 ---
 
-## 8. Complete Data Transfer Process – From Application to Physical Layer
+## 7. Complete Data Transfer Process – From Application to Physical Layer
 
 When a sender transmits data to a receiver, the data passes through all seven layers.
 
