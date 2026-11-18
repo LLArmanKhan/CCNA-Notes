@@ -1065,3 +1065,11 @@ VI. Presentation Layer: Performs the required decoding, decryption, or decompres
 VII. Application Layer: Delivers the data to the receiving application.
 
 This is the overall working of the OSI Model.
+
+## 8. References
+
+**Video:** OSI MODEL in easiest Way in Hindi/Urdu-Bhupinder Rajput
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/Dppl6iA2G8Q?si=wGSaI-gwecGr5G4Y
