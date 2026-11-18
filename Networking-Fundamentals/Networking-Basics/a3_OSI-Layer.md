@@ -763,29 +763,28 @@ The communication session between Sameer and S1 is closed.
 6. Difference Between Network Layer and Transport Layer
 The Network Layer and Transport Layer have different responsibilities.
 Network Layer
-The Network Layer provides packet delivery from the source device to the destination device across networks.It works with IP addresses.
+The Network Layer provides packet delivery from the source device to the destination device across networks. It works with IP addresses.
 For example, when YouTube's server sends data towards my device, the Network Layer is responsible for forwarding packets towards my destination IP address.
 Transport Layer
-The Transport Layer provides communication between source and destination applications.It works with port numbers.
+The Transport Layer provides communication between source and destination applications. It works with port numbers.
 For example, when data reaches my device, the Transport Layer checks the destination port number and delivers the data to the appropriate application.
-8. Complete Data Transfer Process – From Application to Physical Layer
+7. Complete Data Transfer Process – From Application to Physical Layer
 When a sender transmits data to a receiver, the data passes through all seven layers.
 
 The sender-side process:
-I. Application Layer: The application generates the data.
-II. Presentation Layer: Data is formatted, encrypted, or compressed where required.
-III. Session Layer: Communication sessions are established and managed.
-IV. Transport Layer: Data is segmented, port information is added, and transport mechanisms are applied.
-V. Network Layer: Source and destination IP addresses are added to create an IP packet.
-VI. Data Link Layer: Source and destination MAC addresses and FCS are added to create a frame.
-VII. Physical Layer: The frame is transmitted as bits through the communication medium.
-
+- I. Application Layer:** The application generates the data.
+- II. Presentation Layer:** Data is formatted, encrypted, or compressed where required.
+- III. Session Layer:** Communication sessions are established and managed.
+- IV. Transport Layer:** Data is segmented, port information is added, and transport mechanisms are applied.
+- V. Network Layer:** Source and destination IP addresses are added to create an IP packet.
+- VI. Data Link Layer:** Source and destination MAC addresses and FCS are added to create a frame.
+- VII. Physical Layer:** The frame is transmitted as bits through the communication medium.
 At the receiver's side, the reverse process takes place.
-I. Physical Layer: Receives signals and converts them into bits.
-II. Data Link Layer: Receives the frame and performs error detection.
-III. Network Layer: Processes the IP packet and checks the destination IP address.
-IV. Transport Layer: Processes the segment or datagram and delivers data to the appropriate application endpoint.
-V. Session Layer: Manages the communication session.
-VI. Presentation Layer: Performs the required decoding, decryption, or decompression.
-VII. Application Layer: Delivers the data to the receiving application.
+- I. Physical Layer:** Receives signals and converts them into bits.
+- II. Data Link Layer:** Receives the frame and performs error detection.
+- III. Network Layer:** Processes the IP packet and checks the destination IP address.
+- IV. Transport Layer:** Processes the segment or datagram and delivers data to the appropriate application endpoint.
+- V. Session Layer:** Manages the communication session.
+- VI. Presentation Layer:** Performs the required decoding, decryption, or decompression.
+- VII. Application Layer:** Delivers the data to the receiving application.
 This is the overall working of the OSI Model.
