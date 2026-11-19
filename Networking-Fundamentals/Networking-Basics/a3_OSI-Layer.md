@@ -1070,6 +1070,6 @@ This is the overall working of the OSI Model.
 
 **Video:** OSI MODEL in easiest Way in Hindi/Urdu-Bhupinder Rajput
 
-**Channel:** Technical Guftugu
+**Channel:** Technical Guftugu  
 
 **Link:** https://youtu.be/Dppl6iA2G8Q?si=wGSaI-gwecGr5G4Y
