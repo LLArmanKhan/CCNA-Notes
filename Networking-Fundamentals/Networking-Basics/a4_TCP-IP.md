@@ -458,3 +458,14 @@ This process is called **Encapsulation** at the sender and **Decapsulation** at 
 | **Network Access Layer** | Ethernet, Wi-Fi, PPP, ARP | Frame / Bits |
 
 **Sender:** Top → Bottom  |  **Receiver:** Bottom → Top
+
+
+---
+
+## 11. References
+
+**Video:** What is TCP/IP Model-Hindi/Urdu | Comparison between OSI and TCP/IP | TCP v/s UDP
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/gUOlE3If3yk?si=ZmriXF_gCqi3AdUd
