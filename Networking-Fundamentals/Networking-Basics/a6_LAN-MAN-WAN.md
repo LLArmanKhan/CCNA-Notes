@@ -93,7 +93,7 @@ VI. **Transmission Media:** Commonly uses Optical Fibre Cables, leased lines, un
 - Two computers communicating through Facebook or WhatsApp using the Internet.
 - Satellite-based Internet services such as Starlink.
 
-### Comparison Between LAN, MAN and WAN
+### 4. Comparison Between LAN, MAN and WAN
 
 | Basis | LAN | MAN | WAN |
 |---|---|---|---|
@@ -104,3 +104,13 @@ VI. **Transmission Media:** Commonly uses Optical Fibre Cables, leased lines, un
 | Security | More control | Depends on infrastructure | Requires strong security |
 | Transmission Media | Ethernet, Wi-Fi | Optical Fibre | Optical Fibre, Satellite, Leased Lines |
 | Example | Home / Office Network | City-wide network | Internet |
+
+---
+
+## 5. References
+
+**Video:** Types of Network(LAN,MAN,WAN) |Types of Computer Network? | Local area Network kya hota hai
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/1TDZVhlELo4?si=Zb3sjQBmpg5i-yGU
