@@ -7,7 +7,7 @@
 │   ├── 01-Networking-Basics/
 │   │   ├── What-is-a-Network.md
 │   │   ├── Types-of-Networks.md
-│   │   ├── LAN-MAN-WAN.md
+│   │   ├── LAN-MAN-WAN.md ✅
 │   │   ├── Network-Topologies.md
 │   │   ├── OSI-Model.md ✅
 │   │   ├── TCP-IP-Model.md ✅
