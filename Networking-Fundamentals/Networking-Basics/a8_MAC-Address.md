@@ -56,6 +56,8 @@ It is divided into two parts:
 
 **48-bit MAC Address**
 
+![alt text](b9_image.png)
+
 **Part 1: OUI (Organizationally Unique Identifier) – First 24 Bits**
 
 - The first 24 bits identify the organization or manufacturer that was assigned the address block.
