@@ -10,7 +10,7 @@
 │   │   ├── LAN-MAN-WAN.md
 │   │   ├── Network-Topologies.md
 │   │   ├── OSI-Model.md ✅
-│   │   ├── TCP-IP-Model.md
+│   │   ├── TCP-IP-Model.md ✅
 │   │   ├── Encapsulation-and-Decapsulation.md
 │   │   ├── Network-Communication-Models.md
 │   │   └── Unicast-Multicast-Broadcast.md
