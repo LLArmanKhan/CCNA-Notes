@@ -140,7 +140,7 @@ The broadcast MAC Address is:
 
 `FF:FF:FF:FF:FF:FF`
 
-### Quick Revision
+### 9. Quick Revision
 
 | Property | MAC Address |
 |---|---|
@@ -154,3 +154,13 @@ The broadcast MAC Address is:
 | Assignment Authority | IEEE |
 | Broadcast Address | FF:FF:FF:FF:FF:FF |
 | Associated With | Network Interface Card (NIC) |
+
+---
+
+## 10. References
+
+**Video:** What is MAC Address-Hindi/Urdu |Unique Things About MAC address हिंदी में | MAC address kya hota hai
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/sl2rzXodeRo?si=9edViewMX4uxpVj7
