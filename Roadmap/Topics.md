@@ -9,7 +9,7 @@
 │   │   ├── Types-of-Networks.md
 │   │   ├── LAN-MAN-WAN.md
 │   │   ├── Network-Topologies.md
-│   │   ├── OSI-Model.md
+│   │   ├── OSI-Model.md ✅
 │   │   ├── TCP-IP-Model.md
 │   │   ├── Encapsulation-and-Decapsulation.md
 │   │   ├── Network-Communication-Models.md
