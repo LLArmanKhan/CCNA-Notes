@@ -17,14 +17,14 @@
 │   │
 │   ├── 02-Network-Devices/
 │   │   ├── Routers/
-│   │   │   ├── Router-Introduction.md
+│   │   │   ├── Router-Introduction.md ✅
 │   │   │   ├── Router-Components.md
 │   │   │   ├── Router-Interfaces.md
 │   │   │   ├── Router-Configuration.md
 │   │   │   └── Packet-Forwarding.md
 │   │   │
 │   │   ├── Switches/
-│   │   │   ├── Switch-Introduction.md
+│   │   │   ├── Switch-Introduction.md ✅
 │   │   │   ├── Layer-2-vs-Layer-3-Switches.md
 │   │   │   ├── MAC-Address-Table.md
 │   │   │   ├── MAC-Learning-and-Aging.md
@@ -70,7 +70,7 @@
 │   │   └── ARP-and-Gratuitous-ARP.md
 │   │
 │   ├── 06-IPv4/
-│   │   ├── IPv4-Addressing.md
+│   │   ├── IPv4-Addressing.md ✅
 │   │   ├── Public-vs-Private-IP.md
 │   │   ├── Subnetting.md
 │   │   ├── CIDR-Notation.md
