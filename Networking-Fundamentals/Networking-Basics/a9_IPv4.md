@@ -555,3 +555,13 @@ I. The formula 2^h -2 applies to traditional IPv4 subnets where network and broa
 II. The number of hosts calculated above represents the capacity of a network/subnet, not the number of private IPs that can be connected to one public IP. NAT allows multiple private devices to share one public IP.
 
 III. The class-based Network ID calculations above apply to Classful Addressing. Modern networks generally use CIDR, where the subnet mask determines the Network and Host portions.
+
+---
+
+## 10. References
+
+**Video:** IP Addressing in easiest way-Hindi/Urdu|
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/_ISu9f8ofZk?si=ZD3GoOKeCTJaSscg
