@@ -560,7 +560,7 @@ III. The class-based Network ID calculations above apply to Classful Addressing.
 
 ## 10. References
 
-**Video:** IP Addressing in easiest way-Hindi/Urdu|
+**Video:** IP Addressing in easiest way-Hindi/Urdu
 
 **Channel:** Technical Guftugu
 
