@@ -786,4 +786,12 @@ III. Network Layer (Layer 3)
 - Switch: One collision domain per port; same VLAN shares a broadcast domain.
 - Router: Each routed interface belongs to a separate broadcast domain.
 
+---
 
+## 10. References
+
+**Video:** What is Hub,Bridge,switch and Router-Hindi/Urdu | Best Video on Networking Devices-Hindi/URDU
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/eOO7pehMNAE?si=Ae_wbpPKGsqL8eu7
