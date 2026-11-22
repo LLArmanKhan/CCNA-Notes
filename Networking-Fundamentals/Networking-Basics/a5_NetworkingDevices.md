@@ -786,14 +786,4 @@ III. Network Layer (Layer 3)
 - Switch: One collision domain per port; same VLAN shares a broadcast domain.
 - Router: Each routed interface belongs to a separate broadcast domain.
 
-## 10. Network Understanding
 
-Consider the diagram
-
-Suppose 10.0.0.1 wants to communicate with 192.168.1.1.
-- PC1 uses 10.0.0.254 as its Default Gateway.
-- The router receives the packet through Port 1.
-- It checks the Destination IP address.
-- It forwards the packet through Port 2.
-- PC3 receives the packet.
-This is the fundamental concept of inter-network communication.
