@@ -1,6 +1,6 @@
 # Data Transmission 
 
-## 1. What is a Transmission Mode?
+## 1. What is a Transmission Mode?  
 
 A **Transmission Mode** defines the direction in which data can flow between two devices over a communication link.
 
