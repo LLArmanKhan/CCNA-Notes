@@ -330,3 +330,14 @@ The following table summarizes all the IPv4 header fields and their respective s
 - Maximum header size = 60 bytes.
 - Total Length field = 16 bits.
 - Maximum IPv4 packet size = 65,535 bytes.
+
+---
+
+## E. References
+
+**Video:** 
+IPv4 Header in Hindi/Urdu | CCNA full course in hindi | IP addressing 
+
+**Channel:** Technical Guftugu
+
+**Link:** https://youtu.be/WrpKYJgIPvk?si=uM9V7aJkFarsQ-jC
