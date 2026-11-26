@@ -19,6 +19,8 @@ II. **Payload:** Contains the data received from the upper layer (usually a TCP 
 
 **IPv4 Packet Structure**
 
+![alt text](b0014_image.png)
+
 **IPv4 Header Size**
 
 - The IPv4 header has a minimum size of 20 bytes.
@@ -36,7 +38,7 @@ Generally, IPv4 packets use a 20-byte header when no additional options are requ
 
 ### B. Fields of IPv4 Header
 
-![alt text](b0014_image.png)
+![alt text](b0015_image.png)
 
 The IPv4 header contains the following fields in a fixed order:
 
